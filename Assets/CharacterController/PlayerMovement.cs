@@ -36,11 +36,20 @@ public class PlayerMovement : MonoBehaviour, ActionsPlayer.IPlayerInputActions
     }
     public void OnSprint(InputAction.CallbackContext context)
     {
-        Debug.Log("a");
+        if (context.started)
+        {
+            Actions.sprintStart?.Invoke();
+        }
+        if (context.canceled)
+        {
+            Actions.sprintEnd?.Invoke();
+        }
     }
 }
 public static class Actions
 {
     public static Action<Vector3> movement;
     public static Action jump;
+    public static Action sprintStart;
+    public static Action sprintEnd;
 }

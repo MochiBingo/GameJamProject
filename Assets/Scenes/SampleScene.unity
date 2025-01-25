@@ -1180,6 +1180,8 @@ MonoBehaviour:
   moveSpeed: 5
   delay: 1
   sprintMod: 1
+  jumpHeight: {x: 0, y: 1.5, z: 0}
+  jumpForce: 5
 --- !u!1 &1999850215
 GameObject:
   m_ObjectHideFlags: 0
