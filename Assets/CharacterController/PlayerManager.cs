@@ -15,11 +15,13 @@ public class PlayerManager : MonoBehaviour
     public float jumpForce = 2.0f;
     private bool onGround;
     private bool isSprinting;
-
+    private HealthSystem healthSystem;
+    private bool canJump = true;
 
 
     void Start()
     {
+        healthSystem = gameObject.GetComponent<HealthSystem>();
         Actions.movement += updateMoveVector;
         Actions.jump += jump;
         Actions.sprintStart += sprintStart;
@@ -28,6 +30,11 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (healthSystem.isDead == true)
+        {
+            playerRigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            canJump = false;
+        }
         moveChar(moveVector);
     }
     void moveChar(Vector3 moveVector)
@@ -44,7 +51,7 @@ public class PlayerManager : MonoBehaviour
     }
     void jump()
     {
-        if (onGround)
+        if (onGround && canJump)
         {
             playerRigidBody.AddForce(jumpHeight * jumpForce, ForceMode.Impulse);
         }

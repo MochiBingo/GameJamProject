@@ -32,7 +32,10 @@ public class PlayerMovement : MonoBehaviour, ActionsPlayer.IPlayerInputActions
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        Debug.Log("a");
+        if (context.performed)
+        {
+            Actions.interact?.Invoke();
+        }    
     }
     public void OnSprint(InputAction.CallbackContext context)
     {
@@ -52,4 +55,5 @@ public static class Actions
     public static Action jump;
     public static Action sprintStart;
     public static Action sprintEnd;
+    public static Action interact;
 }
