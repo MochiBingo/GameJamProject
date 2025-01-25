@@ -28,7 +28,10 @@ public class PlayerMovement : MonoBehaviour, ActionsPlayer.IPlayerInputActions
     }
     public void OnDashDive(InputAction.CallbackContext context)
     {
-        Debug.Log("a");
+        if (context.performed)
+        {
+            Actions.dash?.Invoke();
+        }
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -56,4 +59,5 @@ public static class Actions
     public static Action sprintStart;
     public static Action sprintEnd;
     public static Action interact;
+    public static Action dash;
 }

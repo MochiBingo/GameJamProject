@@ -22,7 +22,6 @@ public class HealthSystem : MonoBehaviour
 
     public void Start()
     {
-        Actions.interact += takeDamage;
         isDead = false;
     }
     public void Update()
@@ -35,8 +34,8 @@ public class HealthSystem : MonoBehaviour
         
         healthText.text = $"Health: {Health}";
     }
-    public void takeDamage(/*int damage*/)
+    public void takeDamage(int damage)
     {
-        Health = Health - 1 /*damage*/;
+        Health = Health - damage;
     }
 }
