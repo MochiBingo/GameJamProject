@@ -25,14 +25,14 @@ void SetCountText()
     if (count >= totalCount)
     {
         countText.color = Color.green;
-        levelEndMessage.text = "You've gotten  all ingredients in this stage, you can head back to the store now!"; 
+        levelEndMessage.text = "You've gotten all ingredients in this stage, you can head back to the store now!"; 
         levelEndMessage.gameObject.SetActive(true);
         StartCoroutine(HideLevelEndMessage());
     }
 }
 IEnumerator HideLevelEndMessage()
 {
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(4f);
     levelEndMessage.gameObject.SetActive(false);
 }
     void OnTriggerEnter(Collider other)
