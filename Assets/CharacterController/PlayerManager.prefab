@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8067005839288455253}
   - component: {fileID: 8777817472007838153}
   - component: {fileID: 1415297776074721037}
+  - component: {fileID: 1245586307966945602}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Player
@@ -98,6 +99,20 @@ MonoBehaviour:
   isDead: 0
   deathscreen: {fileID: 0}
   healthText: {fileID: 0}
+--- !u!114 &1245586307966945602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142883208994880265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a3fc57e2b52ad448adeb9a35266596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countText: {fileID: 0}
+  levelEndMessage: {fileID: 0}
 --- !u!1 &5503464101398575864
 GameObject:
   m_ObjectHideFlags: 0
